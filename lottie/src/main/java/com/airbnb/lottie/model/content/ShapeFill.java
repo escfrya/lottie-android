@@ -16,7 +16,7 @@ public class ShapeFill implements ContentModel {
   private final String name;
   @Nullable private final AnimatableColorValue color;
   @Nullable private final AnimatableIntegerValue opacity;
-  private final boolean hidden;
+  private boolean hidden;
 
   public ShapeFill(String name, boolean fillEnabled, Path.FillType fillType,
                    @Nullable AnimatableColorValue color, @Nullable AnimatableIntegerValue opacity, boolean hidden) {
@@ -46,6 +46,10 @@ public class ShapeFill implements ContentModel {
 
   public boolean isHidden() {
     return hidden;
+  }
+
+  public void setHidden(Boolean value) {
+    hidden = value;
   }
 
   @Override public Content toContent(LottieDrawable drawable, BaseLayer layer) {

@@ -119,4 +119,9 @@ public class MergePathsContent implements PathContent, GreedyContent {
 
     path.op(firstPath, remainderPath, op);
   }
+
+  @Override
+  public void setVisible(boolean visible) {
+    mergePaths.setHidden(!visible);
+  }
 }

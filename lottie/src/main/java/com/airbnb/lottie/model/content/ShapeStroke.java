@@ -59,7 +59,7 @@ public class ShapeStroke implements ContentModel {
   private final LineCapType capType;
   private final LineJoinType joinType;
   private final float miterLimit;
-  private final boolean hidden;
+  private boolean hidden;
 
   public ShapeStroke(String name, @Nullable AnimatableFloatValue offset,
                      List<AnimatableFloatValue> lineDashPattern, AnimatableColorValue color,
@@ -119,5 +119,9 @@ public class ShapeStroke implements ContentModel {
 
   public boolean isHidden() {
     return hidden;
+  }
+
+  public void setHidden(Boolean value) {
+    hidden = value;
   }
 }

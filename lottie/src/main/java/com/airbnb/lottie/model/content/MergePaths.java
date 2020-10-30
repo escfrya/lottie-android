@@ -38,7 +38,7 @@ public class MergePaths implements ContentModel {
 
   private final String name;
   private final MergePathsMode mode;
-  private final boolean hidden;
+  private boolean hidden;
 
   public MergePaths(String name, MergePathsMode mode, boolean hidden) {
     this.name = name;
@@ -56,6 +56,10 @@ public class MergePaths implements ContentModel {
 
   public boolean isHidden() {
     return hidden;
+  }
+
+  public void setHidden(Boolean value) {
+    hidden = value;
   }
 
   @Override @Nullable public Content toContent(LottieDrawable drawable, BaseLayer layer) {

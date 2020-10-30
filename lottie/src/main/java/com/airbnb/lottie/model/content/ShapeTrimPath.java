@@ -29,7 +29,7 @@ public class ShapeTrimPath implements ContentModel {
   private final AnimatableFloatValue start;
   private final AnimatableFloatValue end;
   private final AnimatableFloatValue offset;
-  private final boolean hidden;
+  private boolean hidden;
 
   public ShapeTrimPath(String name, Type type, AnimatableFloatValue start,
                        AnimatableFloatValue end, AnimatableFloatValue offset, boolean hidden) {
@@ -63,6 +63,10 @@ public class ShapeTrimPath implements ContentModel {
 
   public boolean isHidden() {
     return hidden;
+  }
+
+  public void setHidden(Boolean value) {
+    hidden = value;
   }
 
   @Override public Content toContent(LottieDrawable drawable, BaseLayer layer) {

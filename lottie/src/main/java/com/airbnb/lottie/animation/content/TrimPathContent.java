@@ -10,7 +10,7 @@ import java.util.List;
 public class TrimPathContent implements Content, BaseKeyframeAnimation.AnimationListener {
 
   private final String name;
-  private final boolean hidden;
+  private boolean hidden;
   private final List<BaseKeyframeAnimation.AnimationListener> listeners = new ArrayList<>();
   private final ShapeTrimPath.Type type;
   private final BaseKeyframeAnimation<?, Float> startAnimation;
@@ -70,5 +70,10 @@ public class TrimPathContent implements Content, BaseKeyframeAnimation.Animation
 
   public boolean isHidden() {
     return hidden;
+  }
+
+  @Override
+  public void setVisible(boolean visible) {
+    hidden = !visible;
   }
 }

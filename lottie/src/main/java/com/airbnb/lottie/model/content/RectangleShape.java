@@ -15,7 +15,7 @@ public class RectangleShape implements ContentModel {
   private final AnimatableValue<PointF, PointF> position;
   private final AnimatablePointValue size;
   private final AnimatableFloatValue cornerRadius;
-  private final boolean hidden;
+  private boolean hidden;
 
   public RectangleShape(String name, AnimatableValue<PointF, PointF> position,
                         AnimatablePointValue size, AnimatableFloatValue cornerRadius, boolean hidden) {
@@ -44,6 +44,10 @@ public class RectangleShape implements ContentModel {
 
   public boolean isHidden() {
     return hidden;
+  }
+
+  public void setHidden(Boolean value) {
+    hidden = value;
   }
 
   @Override public Content toContent(LottieDrawable drawable, BaseLayer layer) {

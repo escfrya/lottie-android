@@ -39,7 +39,7 @@ public class PolystarShape implements ContentModel {
   private final AnimatableFloatValue outerRadius;
   private final AnimatableFloatValue innerRoundedness;
   private final AnimatableFloatValue outerRoundedness;
-  private final boolean hidden;
+  private boolean hidden;
 
   public PolystarShape(String name, Type type, AnimatableFloatValue points,
                        AnimatableValue<PointF, PointF> position,
@@ -96,6 +96,10 @@ public class PolystarShape implements ContentModel {
 
   public boolean isHidden() {
     return hidden;
+  }
+
+  public void setHidden(Boolean value) {
+    hidden = value;
   }
 
   @Override public Content toContent(LottieDrawable drawable, BaseLayer layer) {

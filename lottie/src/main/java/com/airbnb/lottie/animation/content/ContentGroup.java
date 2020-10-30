@@ -57,7 +57,7 @@ public class ContentGroup implements DrawingContent, PathContent,
   private final RectF rect = new RectF();
 
   private final String name;
-  private final boolean hidden;
+  private boolean hidden;
   private final List<Content> contents;
   private final LottieDrawable lottieDrawable;
   @Nullable private List<PathContent> pathContents;
@@ -250,5 +250,10 @@ public class ContentGroup implements DrawingContent, PathContent,
     if (transformAnimation != null) {
       transformAnimation.applyValueCallback(property, callback);
     }
+  }
+
+  @Override
+  public void setVisible(boolean visible) {
+    hidden = !visible;
   }
 }

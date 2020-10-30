@@ -14,7 +14,7 @@ public class Repeater implements ContentModel {
   private final AnimatableFloatValue copies;
   private final AnimatableFloatValue offset;
   private final AnimatableTransform transform;
-  private final boolean hidden;
+  private boolean hidden;
 
   public Repeater(String name, AnimatableFloatValue copies, AnimatableFloatValue offset,
                   AnimatableTransform transform, boolean hidden) {
@@ -43,6 +43,10 @@ public class Repeater implements ContentModel {
 
   public boolean isHidden() {
     return hidden;
+  }
+
+  public void setHidden(Boolean value) {
+    hidden = value;
   }
 
   @Nullable @Override public Content toContent(LottieDrawable drawable, BaseLayer layer) {

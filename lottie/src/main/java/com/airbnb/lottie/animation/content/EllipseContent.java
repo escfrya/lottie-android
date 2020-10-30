@@ -130,4 +130,9 @@ public class EllipseContent
       positionAnimation.setValueCallback((LottieValueCallback<PointF>) callback);
     }
   }
+
+  @Override
+  public void setVisible(boolean visible) {
+    circleShape.setHidden(!visible);
+  }
 }

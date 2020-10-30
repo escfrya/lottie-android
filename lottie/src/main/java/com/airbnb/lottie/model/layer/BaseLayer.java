@@ -527,7 +527,8 @@ public abstract class BaseLayer
     return mask != null && !mask.getMaskAnimations().isEmpty();
   }
 
-  private void setVisible(boolean visible) {
+  @Override
+  public void setVisible(boolean visible) {
     if (visible != this.visible) {
       this.visible = visible;
       invalidateSelf();

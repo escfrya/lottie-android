@@ -173,6 +173,10 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
     return enableMergePaths;
   }
 
+  public CompositionLayer getCompositionLayer() {
+    return compositionLayer;
+  }
+
   /**
    * If you use image assets, you must explicitly specify the folder in assets/ in which they are
    * located because bodymovin uses the name filenames across all compositions (img_#).
@@ -305,6 +309,10 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
 
   public boolean isApplyingOpacityToLayersEnabled() {
     return isApplyingOpacityToLayersEnabled;
+  }
+
+  public void rebuildComposition() {
+    buildCompositionLayer();
   }
 
   private void buildCompositionLayer() {

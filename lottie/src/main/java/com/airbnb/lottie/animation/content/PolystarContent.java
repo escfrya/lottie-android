@@ -31,7 +31,7 @@ public class PolystarContent
   private final String name;
   private final LottieDrawable lottieDrawable;
   private final PolystarShape.Type type;
-  private final boolean hidden;
+  private boolean hidden;
   private final BaseKeyframeAnimation<?, Float> pointsAnimation;
   private final BaseKeyframeAnimation<?, PointF> positionAnimation;
   private final BaseKeyframeAnimation<?, Float> rotationAnimation;
@@ -321,5 +321,10 @@ public class PolystarContent
     } else if (property == LottieProperty.POLYSTAR_OUTER_ROUNDEDNESS) {
       outerRoundednessAnimation.setValueCallback((LottieValueCallback<Float>) callback);
     }
+  }
+
+  @Override
+  public void setVisible(boolean visible) {
+    hidden = !visible;
   }
 }

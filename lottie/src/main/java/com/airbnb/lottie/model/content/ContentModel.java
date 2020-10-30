@@ -9,4 +9,6 @@ import com.airbnb.lottie.model.layer.BaseLayer;
 
 public interface ContentModel {
   @Nullable Content toContent(LottieDrawable drawable, BaseLayer layer);
+  boolean isHidden();
+  void setHidden(Boolean value);
 }

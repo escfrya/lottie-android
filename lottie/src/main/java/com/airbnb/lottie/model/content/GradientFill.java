@@ -23,7 +23,7 @@ public class GradientFill implements ContentModel {
   private final String name;
   @Nullable private final AnimatableFloatValue highlightLength;
   @Nullable private final AnimatableFloatValue highlightAngle;
-  private final boolean hidden;
+  private boolean hidden;
 
   public GradientFill(String name, GradientType gradientType, Path.FillType fillType,
                       AnimatableGradientColorValue gradientColor,
@@ -80,6 +80,10 @@ public class GradientFill implements ContentModel {
 
   public boolean isHidden() {
     return hidden;
+  }
+
+  public void setHidden(Boolean value) {
+    hidden = value;
   }
 
   @Override public Content toContent(LottieDrawable drawable, BaseLayer layer) {

@@ -20,7 +20,7 @@ public class StrokeContent extends BaseStrokeContent {
 
   private final BaseLayer layer;
   private final String name;
-  private final boolean hidden;
+  private boolean hidden;
   private final BaseKeyframeAnimation<Integer, Integer> colorAnimation;
   @Nullable private BaseKeyframeAnimation<ColorFilter, ColorFilter> colorFilterAnimation;
 
@@ -71,5 +71,10 @@ public class StrokeContent extends BaseStrokeContent {
         layer.addAnimation(colorAnimation);
       }
     }
+  }
+
+  @Override
+  public void setVisible(boolean visible) {
+    hidden = !visible;
   }
 }

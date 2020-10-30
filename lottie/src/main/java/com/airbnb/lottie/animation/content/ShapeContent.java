@@ -14,7 +14,7 @@ public class ShapeContent implements PathContent, BaseKeyframeAnimation.Animatio
   private final Path path = new Path();
 
   private final String name;
-  private final boolean hidden;
+  private boolean hidden;
   private final LottieDrawable lottieDrawable;
   private final BaseKeyframeAnimation<?, Path> shapeAnimation;
 
@@ -75,5 +75,10 @@ public class ShapeContent implements PathContent, BaseKeyframeAnimation.Animatio
 
   @Override public String getName() {
     return name;
+  }
+
+  @Override
+  public void setVisible(boolean visible) {
+    hidden = !visible;
   }
 }

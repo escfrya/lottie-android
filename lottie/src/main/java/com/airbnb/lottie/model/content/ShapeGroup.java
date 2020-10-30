@@ -11,7 +11,7 @@ import java.util.List;
 public class ShapeGroup implements ContentModel {
   private final String name;
   private final List<ContentModel> items;
-  private final boolean hidden;
+  private boolean hidden;
 
   public ShapeGroup(String name, List<ContentModel> items, boolean hidden) {
     this.name = name;
@@ -29,6 +29,10 @@ public class ShapeGroup implements ContentModel {
 
   public boolean isHidden() {
     return hidden;
+  }
+
+  public void setHidden(Boolean value) {
+    hidden = value;
   }
 
   @Override public Content toContent(LottieDrawable drawable, BaseLayer layer) {

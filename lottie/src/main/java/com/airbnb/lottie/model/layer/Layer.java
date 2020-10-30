@@ -56,7 +56,7 @@ public class Layer {
   @Nullable private final AnimatableFloatValue timeRemapping;
   private final List<Keyframe<Float>> inOutKeyframes;
   private final MatteType matteType;
-  private final boolean hidden;
+  private boolean hidden;
 
   public Layer(List<ContentModel> shapes, LottieComposition composition, String layerName, long layerId,
                LayerType layerType, long parentId, @Nullable String refId, List<Mask> masks,
@@ -89,7 +89,7 @@ public class Layer {
     this.hidden = hidden;
   }
 
-  LottieComposition getComposition() {
+  public LottieComposition getComposition() {
     return composition;
   }
 
@@ -141,7 +141,7 @@ public class Layer {
     return parentId;
   }
 
-  List<ContentModel> getShapes() {
+  public List<ContentModel> getShapes() {
     return shapes;
   }
 
@@ -179,6 +179,10 @@ public class Layer {
 
   public boolean isHidden() {
     return hidden;
+  }
+
+  public void setIsHidden(boolean value) {
+    hidden = value;
   }
 
   public String toString(String prefix) {

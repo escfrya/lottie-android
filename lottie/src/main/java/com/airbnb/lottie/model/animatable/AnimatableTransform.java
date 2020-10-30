@@ -105,4 +105,7 @@ public class AnimatableTransform implements ModifierContent, ContentModel {
   public Content toContent(LottieDrawable drawable, BaseLayer layer) {
     return null;
   }
+
+  public boolean isHidden() { return false; }
+  public void setHidden(Boolean value) {}
 }

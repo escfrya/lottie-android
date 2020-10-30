@@ -40,7 +40,7 @@ public class GradientFillContent
    */
   private static final int CACHE_STEPS_MS = 32;
   @NonNull private final String name;
-  private final boolean hidden;
+  private boolean hidden;
   private final BaseLayer layer;
   private final LongSparseArray<LinearGradient> linearGradientCache = new LongSparseArray<>();
   private final LongSparseArray<RadialGradient> radialGradientCache = new LongSparseArray<>();
@@ -263,5 +263,10 @@ public class GradientFillContent
          layer.addAnimation(colorCallbackAnimation);
        }
     }
+  }
+
+  @Override
+  public void setVisible(boolean visible) {
+    hidden = !visible;
   }
 }

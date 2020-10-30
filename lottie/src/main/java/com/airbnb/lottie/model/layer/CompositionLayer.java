@@ -33,6 +33,10 @@ public class CompositionLayer extends BaseLayer {
   @Nullable private Boolean hasMatte;
   @Nullable private Boolean hasMasks;
 
+  public List<BaseLayer> getLayers() {
+    return layers;
+  }
+
   public CompositionLayer(LottieDrawable lottieDrawable, Layer layerModel, List<Layer> layerModels,
       LottieComposition composition) {
     super(lottieDrawable, layerModel);

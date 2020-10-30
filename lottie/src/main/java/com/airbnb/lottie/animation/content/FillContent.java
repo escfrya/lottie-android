@@ -32,7 +32,7 @@ public class FillContent
   private final Paint paint = new LPaint(Paint.ANTI_ALIAS_FLAG);
   private final BaseLayer layer;
   private final String name;
-  private final boolean hidden;
+  private boolean hidden;
   private final List<PathContent> paths = new ArrayList<>();
   private final BaseKeyframeAnimation<Integer, Integer> colorAnimation;
   private final BaseKeyframeAnimation<Integer, Integer> opacityAnimation;
@@ -141,5 +141,10 @@ public class FillContent
         layer.addAnimation(colorFilterAnimation);
       }
     }
+  }
+
+  @Override
+  public void setVisible(boolean visible) {
+    hidden = !visible;
   }
 }

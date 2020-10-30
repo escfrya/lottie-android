@@ -27,7 +27,7 @@ public class GradientStrokeContent extends BaseStrokeContent {
   private static final int CACHE_STEPS_MS = 32;
 
   private final String name;
-  private final boolean hidden;
+  private boolean hidden;
   private final LongSparseArray<LinearGradient> linearGradientCache = new LongSparseArray<>();
   private final LongSparseArray<RadialGradient> radialGradientCache = new LongSparseArray<>();
   private final RectF boundsRect = new RectF();
@@ -176,5 +176,10 @@ public class GradientStrokeContent extends BaseStrokeContent {
         layer.addAnimation(colorCallbackAnimation);
       }
     }
+  }
+
+  @Override
+  public void setVisible(boolean visible) {
+    hidden = !visible;
   }
 }

@@ -14,7 +14,7 @@ public class CircleShape implements ContentModel {
   private final AnimatableValue<PointF, PointF> position;
   private final AnimatablePointValue size;
   private final boolean isReversed;
-  private final boolean hidden;
+  private boolean hidden;
 
   public CircleShape(String name, AnimatableValue<PointF, PointF> position,
                      AnimatablePointValue size, boolean isReversed, boolean hidden) {
@@ -47,5 +47,9 @@ public class CircleShape implements ContentModel {
 
   public boolean isHidden() {
     return hidden;
+  }
+
+  public void setHidden(Boolean value) {
+    hidden = value;
   }
 }

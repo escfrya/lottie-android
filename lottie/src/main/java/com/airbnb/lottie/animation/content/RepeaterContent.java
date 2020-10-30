@@ -29,7 +29,7 @@ public class RepeaterContent implements DrawingContent, PathContent, GreedyConte
   private final LottieDrawable lottieDrawable;
   private final BaseLayer layer;
   private final String name;
-  private final boolean hidden;
+  private boolean hidden;
   private final BaseKeyframeAnimation<Float, Float> copies;
   private final BaseKeyframeAnimation<Float, Float> offset;
   private final TransformKeyframeAnimation transform;
@@ -143,5 +143,10 @@ public class RepeaterContent implements DrawingContent, PathContent, GreedyConte
     } else if (property == LottieProperty.REPEATER_OFFSET) {
       offset.setValueCallback((LottieValueCallback<Float>) callback);
     }
+  }
+
+  @Override
+  public void setVisible(boolean visible) {
+    hidden = !visible;
   }
 }

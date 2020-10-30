@@ -27,7 +27,7 @@ public class GradientStroke implements ContentModel {
   private final float miterLimit;
   private final List<AnimatableFloatValue> lineDashPattern;
   @Nullable private final AnimatableFloatValue dashOffset;
-  private final boolean hidden;
+  private boolean hidden;
 
   public GradientStroke(String name, GradientType gradientType,
                         AnimatableGradientColorValue gradientColor,
@@ -101,6 +101,10 @@ public class GradientStroke implements ContentModel {
 
   public boolean isHidden() {
     return hidden;
+  }
+
+  public void setHidden(Boolean value) {
+    hidden = value;
   }
 
   @Override public Content toContent(LottieDrawable drawable, BaseLayer layer) {

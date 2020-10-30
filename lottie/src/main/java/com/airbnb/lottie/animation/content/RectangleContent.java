@@ -25,7 +25,7 @@ public class RectangleContent
   private final RectF rect = new RectF();
 
   private final String name;
-  private final boolean hidden;
+  private boolean hidden;
   private final LottieDrawable lottieDrawable;
   private final BaseKeyframeAnimation<?, PointF> positionAnimation;
   private final BaseKeyframeAnimation<?, PointF> sizeAnimation;
@@ -169,5 +169,10 @@ public class RectangleContent
     } else if (property == LottieProperty.CORNER_RADIUS) {
       cornerRadiusAnimation.setValueCallback((LottieValueCallback<Float>) callback);
     }
+  }
+
+  @Override
+  public void setVisible(boolean visible) {
+    hidden = !visible;
   }
 }

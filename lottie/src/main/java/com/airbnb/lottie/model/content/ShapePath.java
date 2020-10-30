@@ -10,7 +10,7 @@ public class ShapePath implements ContentModel {
   private final String name;
   private final int index;
   private final AnimatableShapeValue shapePath;
-  private final boolean hidden;
+  private boolean hidden;
 
   public ShapePath(String name, int index, AnimatableShapeValue shapePath, boolean hidden) {
     this.name = name;
@@ -33,6 +33,10 @@ public class ShapePath implements ContentModel {
 
   public boolean isHidden() {
     return hidden;
+  }
+
+  public void setHidden(Boolean value) {
+    hidden = value;
   }
 
   @Override public String toString() {
