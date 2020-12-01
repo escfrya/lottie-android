@@ -19,4 +19,8 @@ public class CompoundTrimPathContent {
             Utils.applyTrimPathIfNeeded(path, contents.get(i));
         }
     }
+
+    public List<TrimPathContent> getContents() {
+        return contents;
+    }
 }

@@ -15,6 +15,7 @@ import com.airbnb.lottie.model.KeyPath;
 import com.airbnb.lottie.model.animatable.AnimatableFloatValue;
 import com.airbnb.lottie.utils.Utils;
 import com.airbnb.lottie.value.LottieValueCallback;
+import com.airbnb.lottie.animation.content.Content;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -220,5 +221,10 @@ public class CompositionLayer extends BaseLayer {
         addAnimation(timeRemapping);
       }
     }
+  }
+
+  @Override
+  public List<Content> getChildren() {
+    return (List<Content>)(List<?>)layers;
   }
 }

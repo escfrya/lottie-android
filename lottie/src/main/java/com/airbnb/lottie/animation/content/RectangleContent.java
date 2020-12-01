@@ -14,8 +14,11 @@ import com.airbnb.lottie.model.content.ShapeTrimPath;
 import com.airbnb.lottie.model.layer.BaseLayer;
 import com.airbnb.lottie.utils.MiscUtils;
 import com.airbnb.lottie.value.LottieValueCallback;
+import com.airbnb.lottie.animation.content.Content;
 
 import java.util.List;
+import java.util.Arrays;
+import java.util.Collections;
 
 import androidx.annotation.Nullable;
 
@@ -174,5 +177,10 @@ public class RectangleContent
   @Override
   public void setVisible(boolean visible) {
     hidden = !visible;
+  }
+
+  @Override
+  public List<Content> getChildren() {
+    return (List<Content>)(List<?>)trimPaths.getContents();
   }
 }

@@ -25,7 +25,9 @@ import com.airbnb.lottie.model.animatable.AnimatableTextProperties;
 import com.airbnb.lottie.model.content.ShapeGroup;
 import com.airbnb.lottie.utils.Utils;
 import com.airbnb.lottie.value.LottieValueCallback;
+import com.airbnb.lottie.animation.content.Content;
 
+import java.util.Collections;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -516,5 +518,10 @@ public class TextLayer extends BaseLayer {
         addAnimation(textSizeCallbackAnimation);
       }
     }
+  }
+
+  @Override
+  public List<Content> getChildren() {
+    return Collections.emptyList();
   }
 }

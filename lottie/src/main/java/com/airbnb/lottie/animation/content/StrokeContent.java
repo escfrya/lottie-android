@@ -13,6 +13,10 @@ import com.airbnb.lottie.animation.keyframe.ValueCallbackKeyframeAnimation;
 import com.airbnb.lottie.model.content.ShapeStroke;
 import com.airbnb.lottie.model.layer.BaseLayer;
 import com.airbnb.lottie.value.LottieValueCallback;
+import com.airbnb.lottie.animation.content.Content;
+
+import java.util.Collections;
+import java.util.List;
 
 import static com.airbnb.lottie.LottieProperty.STROKE_COLOR;
 
@@ -76,5 +80,10 @@ public class StrokeContent extends BaseStrokeContent {
   @Override
   public void setVisible(boolean visible) {
     hidden = !visible;
+  }
+
+  @Override
+  public List<Content> getChildren() {
+    return Collections.emptyList();
   }
 }

@@ -10,9 +10,11 @@ import com.airbnb.lottie.animation.content.Content;
 import com.airbnb.lottie.animation.content.ContentGroup;
 import com.airbnb.lottie.model.KeyPath;
 import com.airbnb.lottie.model.content.ShapeGroup;
+import com.airbnb.lottie.animation.content.Content;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Arrays;
 
 public class ShapeLayer extends BaseLayer {
   private final ContentGroup contentGroup;
@@ -39,5 +41,10 @@ public class ShapeLayer extends BaseLayer {
   protected void resolveChildKeyPath(KeyPath keyPath, int depth, List<KeyPath> accumulator,
       KeyPath currentPartialKeyPath) {
     contentGroup.resolveKeyPath(keyPath, depth, accumulator, currentPartialKeyPath);
+  }
+
+  @Override
+  public List<Content> getChildren() {
+    return (List<Content>)(List<?>)contentGroup.getChildren();
   }
 }

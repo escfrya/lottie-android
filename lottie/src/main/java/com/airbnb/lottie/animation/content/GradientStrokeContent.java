@@ -19,6 +19,10 @@ import com.airbnb.lottie.model.content.GradientStroke;
 import com.airbnb.lottie.model.content.GradientType;
 import com.airbnb.lottie.model.layer.BaseLayer;
 import com.airbnb.lottie.value.LottieValueCallback;
+import com.airbnb.lottie.animation.content.Content;
+
+import java.util.Collections;
+import java.util.List;
 
 public class GradientStrokeContent extends BaseStrokeContent {
   /**
@@ -181,5 +185,10 @@ public class GradientStrokeContent extends BaseStrokeContent {
   @Override
   public void setVisible(boolean visible) {
     hidden = !visible;
+  }
+
+  @Override
+  public List<Content> getChildren() {
+    return Collections.emptyList();
   }
 }

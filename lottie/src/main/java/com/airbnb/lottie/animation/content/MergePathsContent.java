@@ -5,6 +5,7 @@ import android.graphics.Path;
 import android.os.Build;
 
 import com.airbnb.lottie.model.content.MergePaths;
+import com.airbnb.lottie.animation.content.Content;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -123,5 +124,10 @@ public class MergePathsContent implements PathContent, GreedyContent {
   @Override
   public void setVisible(boolean visible) {
     mergePaths.setHidden(!visible);
+  }
+
+  @Override
+  public List<Content> getChildren() {
+    return (List<Content>)(List<?>)pathContents;
   }
 }

@@ -8,4 +8,5 @@ public interface Content {
 
   void setContents(List<Content> contentsBefore, List<Content> contentsAfter);
   void setVisible(boolean visible);
+  List<Content> getChildren();
 }

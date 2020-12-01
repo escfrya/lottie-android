@@ -17,6 +17,10 @@ import com.airbnb.lottie.animation.keyframe.BaseKeyframeAnimation;
 import com.airbnb.lottie.animation.keyframe.ValueCallbackKeyframeAnimation;
 import com.airbnb.lottie.utils.Utils;
 import com.airbnb.lottie.value.LottieValueCallback;
+import com.airbnb.lottie.animation.content.Content;
+
+import java.util.Collections;
+import java.util.List;
 
 public class ImageLayer extends BaseLayer {
 
@@ -76,5 +80,10 @@ public class ImageLayer extends BaseLayer {
              new ValueCallbackKeyframeAnimation<>((LottieValueCallback<ColorFilter>) callback);
        }
     }
+  }
+
+  @Override
+  public List<Content> getChildren() {
+    return Collections.emptyList();
   }
 }

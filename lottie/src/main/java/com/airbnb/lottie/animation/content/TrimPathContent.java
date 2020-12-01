@@ -3,9 +3,11 @@ package com.airbnb.lottie.animation.content;
 import com.airbnb.lottie.animation.keyframe.BaseKeyframeAnimation;
 import com.airbnb.lottie.model.content.ShapeTrimPath;
 import com.airbnb.lottie.model.layer.BaseLayer;
+import com.airbnb.lottie.animation.content.Content;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Collections;
 
 public class TrimPathContent implements Content, BaseKeyframeAnimation.AnimationListener {
 
@@ -75,5 +77,10 @@ public class TrimPathContent implements Content, BaseKeyframeAnimation.Animation
   @Override
   public void setVisible(boolean visible) {
     hidden = !visible;
+  }
+
+  @Override
+  public List<Content> getChildren() {
+    return Collections.emptyList();
   }
 }

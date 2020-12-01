@@ -14,7 +14,9 @@ import com.airbnb.lottie.model.content.ShapeTrimPath;
 import com.airbnb.lottie.model.layer.BaseLayer;
 import com.airbnb.lottie.utils.MiscUtils;
 import com.airbnb.lottie.value.LottieValueCallback;
+import com.airbnb.lottie.animation.content.Content;
 
+import java.util.Collections;
 import java.util.List;
 
 public class EllipseContent
@@ -134,5 +136,10 @@ public class EllipseContent
   @Override
   public void setVisible(boolean visible) {
     circleShape.setHidden(!visible);
+  }
+
+  @Override
+  public List<Content> getChildren() {
+    return Collections.emptyList();
   }
 }

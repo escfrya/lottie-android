@@ -5,6 +5,10 @@ import android.graphics.Matrix;
 import android.graphics.RectF;
 
 import com.airbnb.lottie.LottieDrawable;
+import com.airbnb.lottie.animation.content.Content;
+
+import java.util.Collections;
+import java.util.List;
 
 public class NullLayer extends BaseLayer {
   NullLayer(LottieDrawable lottieDrawable, Layer layerModel) {
@@ -18,5 +22,10 @@ public class NullLayer extends BaseLayer {
   @Override public void getBounds(RectF outBounds, Matrix parentMatrix, boolean applyParents) {
     super.getBounds(outBounds, parentMatrix, applyParents);
     outBounds.set(0, 0, 0, 0);
+  }
+
+  @Override
+  public List<Content> getChildren() {
+    return Collections.emptyList();
   }
 }

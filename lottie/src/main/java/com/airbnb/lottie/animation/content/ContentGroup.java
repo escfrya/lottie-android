@@ -256,4 +256,9 @@ public class ContentGroup implements DrawingContent, PathContent,
   public void setVisible(boolean visible) {
     hidden = !visible;
   }
+
+  @Override
+  public List<Content> getChildren() {
+    return contents;
+  }
 }

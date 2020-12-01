@@ -15,6 +15,10 @@ import com.airbnb.lottie.animation.LPaint;
 import com.airbnb.lottie.animation.keyframe.BaseKeyframeAnimation;
 import com.airbnb.lottie.animation.keyframe.ValueCallbackKeyframeAnimation;
 import com.airbnb.lottie.value.LottieValueCallback;
+import com.airbnb.lottie.animation.content.Content;
+
+import java.util.Collections;
+import java.util.List;
 
 public class SolidLayer extends BaseLayer {
   private final RectF rect = new RectF();
@@ -88,5 +92,10 @@ public class SolidLayer extends BaseLayer {
             new ValueCallbackKeyframeAnimation<>((LottieValueCallback<ColorFilter>) callback);
       }
     }
+  }
+
+  @Override
+  public List<Content> getChildren() {
+    return Collections.emptyList();
   }
 }
